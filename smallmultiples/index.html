@@ -116,7 +116,7 @@
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 	// TODO: Change the variables below to customize the small multiples interface for your data
-	var polygonJSONFile = 'data/WisconsinAgain.geojson'
+	var polygonJSONFile = 'data/WisconsinQE.geojson'
 	// change the projection if needed *d3.geoAlbers()*
 	var projection = d3.geoTransverseMercator();
 	var widthheightRatio = 0.4;
@@ -139,16 +139,16 @@
 	// att1format: enter the d3.format string to display the variables in the format you like
 	// Check this link on how to specify the desired format:
 	// https://observablehq.com/@d3/d3-format
-	var att1 = 'POP_SQMI', att1alias = 'Lung Cancer Death Density per 10,000', att1format = '.0f',
-	att2 = 'MED_AGE', att2alias =  '% Smokers', att2format = '.0f',
-	att3 = 'AVE_HH_SZ', att3alias = '$ Spent', att3format = '.0f',
-	att4 = 'HSE_UNITS', att4alias = '% 65+', att4format = '.0f';
+	var att1 = 'POP_SQMI', att1alias = 'Population per Square Mile', att1format = '.1f',
+	att2 = 'MED_AGE', att2alias =  'Median Age', att2format = '.0f',
+	att3 = 'AVE_HH_SZ', att3alias = 'Avegerage Household Size', att3format = '.1f',
+	att4 = 'HSE_UNITS', att4alias = 'Household Units', att4format = '.0f';
 
   // enter below all variables that should be normalized. If you would like to multiple the variables
 	// with a constant value enter them in multiplyBy array. If there is no need for multiplication,
 	// simply enter 1 for each value in multiplyBy.
   var attributesToBeNormalized = [att1, att4];
-	var multiplyBy = [100, 100];
+	var multiplyBy = [10000, 100];
 	var divideBy = ['POP2010', 'POP2010'];
 	// if your variables are not raw counts and they are already normalized, comment out above, and
 	//uncomment below:
